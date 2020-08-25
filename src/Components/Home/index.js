@@ -1,5 +1,5 @@
 import React from "react";
-// import Navigation from './Navigation';
+import Navigation from './Navigation';
 
 import "../../css/layouts.css";
 import "../../css/displays.css";
@@ -16,7 +16,7 @@ const Home = () => {
 				
 				<h3>Note: D3 is now in version 5. These are my past proof of concepts recoded for the new version.</h3>
 			</header>
-            {/* <Navigation /> */}
+            <Navigation />
             <header>
 				<h2>D3 Map Projections</h2>
 				<p>What is a projection?</p>
