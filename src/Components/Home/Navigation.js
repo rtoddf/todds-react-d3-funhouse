@@ -8,6 +8,7 @@ const Navigation = () => {
                 <ul>
                     <li><a href="/simple/class/simple01">Simple 01 - Class</a></li>
                     <li><a href="/simple/hooks/simple01">Simple 01 - Hooks</a></li>
+                    <li><a href="/simple/hooks/simple02">Simple 02 - Hooks</a></li>
                 </ul>
             </article>
             <article class="panel">
