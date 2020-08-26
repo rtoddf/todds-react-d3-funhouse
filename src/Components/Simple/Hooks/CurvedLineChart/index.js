@@ -5,26 +5,35 @@ function CurvedLineChart() {
     const [data, setData] = useState([25, 30, 45, 60, 20, 65, 75]);
     const svgRef = useRef();
 
+    const width = 500,
+    height = 300
+
     useEffect(() => {
-        const svg = select(svgRef.current);
+        const svg = select(svgRef.current)
+            .attr("width", width)
+            .attr("height", height)
+
         const myLine = line()
-            .x((value, index) => index * 50)
-            .y(value => 150 - value)
+            .x((value, index) => index * (width / (data.length -1)))
+            .y(value => height - value)
             .curve(curveCardinal)
-        // svg
-        //     .selectAll("circle")
-        //     .data(data)
-        //     .join("circle")
-        //         .attr("r", value => value)
-        //         .attr("cx", value => value * 2)
-        //         .attr("cy", value => value * 2)
-        //         .attr("stroke", "orange")
+
         svg.selectAll('path')
             .data([data])
             .join('path')
             .attr('d', value => myLine(value))
             .attr('fill', 'none')
             .attr('stroke', 'orange')
+
+        svg
+            .selectAll("circle")
+            .data(data)
+            .join("circle")
+                .attr("r", 5)
+                .attr("cx", (value, index) => index * (width / (data.length -1)))
+                .attr("cy", value => height - value)
+                .attr("fill", "orange")
+        
 
         console.log(svg.selectAll("circle").data(data))
     }, [data])

@@ -7,11 +7,17 @@ function Simple02() {
     const [data, setData] = useState([20, 25, 30, 45, 60]);
     const svgRef = useRef();
 
+    const width = 500,
+    height = 300
+
     useEffect(() => {
-        console.log("svgRef: ", svgRef)
+        // console.log("svgRef: ", svgRef)
 
         // with the line below, we now have access to D3 to do dom maniluplation
-        const svg = select(svgRef.current);
+        const svg = select(svgRef.current)
+            .attr("width", width)
+            .attr("height", height)
+        
         svg
             .selectAll("circle")
             .data(data)
@@ -26,11 +32,11 @@ function Simple02() {
             // concise way
             .join("circle")
                 .attr("r", value => value)
-                .attr("cx", value => value * 2)
-                .attr("cy", value => value * 2)
+                .attr("cx", (value, index) => index * (width / (data.length -1)))
+                .attr("cy", (value, index) => index * (height / (data.length -1)))
                 .attr("stroke", "orange")
 
-        console.log(svg.selectAll("circle").data(data))
+        // console.log(svg.selectAll("circle").data(data))
     }, [data])
 
     return (

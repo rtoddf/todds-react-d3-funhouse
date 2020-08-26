@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 
 import "../../css/layouts.css";
 import "../../css/displays.css";
+import "../../css/visstyles.css";
 
 const Home = () => {
     return (
