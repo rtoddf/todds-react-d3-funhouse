@@ -11,6 +11,7 @@ const Navigation = () => {
                     <li><a href="/simple/hooks/simple02">Simple 02 - Hooks</a></li>
 
                     <li><a href="/simple/hooks/curved-line-chart">Curved Line Chart - Hooks</a></li>
+                    <li><a href="/simple/hooks/axis-and-scales">Axis and Scales - Hooks</a></li>
                 </ul>
             </article>
             <article className="panel">

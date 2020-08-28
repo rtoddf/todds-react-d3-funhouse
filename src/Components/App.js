@@ -6,6 +6,8 @@ import Simple01Class from "./Simple/Class/Simple01";
 import Simple01Hooks from "./Simple/Hooks/Simple01";
 import Simple02Hooks from "./Simple/Hooks/Simple02";
 import CurvedLineChartHooks from "./Simple/Hooks/CurvedLineChart";
+import AxisAndScalesHooks from "./Simple/Hooks/AxisAndScales";
+
 
 import AlbersUsaClass from "./Maps/Class/Projections/AlbersUsa";
 import AlbersUsaHooks from "./Maps/Hooks/Projections/AlbersUsa";
@@ -26,7 +28,7 @@ class App extends Component {
             <Route exact path="/simple/hooks/simple01" render={() => (<Simple01Hooks />)} />
             <Route exact path="/simple/hooks/simple02" render={() => (<Simple02Hooks />)} />
             <Route exact path="/simple/hooks/curved-line-chart" render={() => (<CurvedLineChartHooks />)} />
-
+            <Route exact path="/simple/hooks/axis-and-scales" render={() => (<AxisAndScalesHooks />)} />
 
             
 
