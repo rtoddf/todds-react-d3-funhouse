@@ -1,5 +1,9 @@
 svg {
-    /* margin: 40px; */
+    margin: 40px;
     background-color: #fff;
     overflow: visible;
+}
+
+.display {
+    text-align: center;
 }
