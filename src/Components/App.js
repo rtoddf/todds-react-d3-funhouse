@@ -8,10 +8,11 @@ import Simple02Hooks from "./Simple/Hooks/Simple02";
 import CurvedLineChartHooks from "./Simple/Hooks/CurvedLineChart";
 import AxisAndScalesHooks from "./Simple/Hooks/AxisAndScales";
 import AnimatedBarChartHooks from "./Simple/Hooks/AnimatedBarChart";
-
+import InteractivityHooks from "./Simple/Hooks/Interactivity";
 
 import AlbersUsaClass from "./Maps/Class/Projections/AlbersUsa";
 import AlbersUsaHooks from "./Maps/Hooks/Projections/AlbersUsa";
+import AlbersUsa02Hooks from "./Maps/Hooks/Projections/AlbersUsa02";
 // import SphericalMercatorClass from "./Maps/Class/Projections/SphericalMercator";
 
 // import OrthographicClass from "./Maps/Class/Projections/Orthographic";
@@ -31,10 +32,11 @@ class App extends Component {
             <Route exact path="/simple/hooks/curved-line-chart" render={() => (<CurvedLineChartHooks />)} />
             <Route exact path="/simple/hooks/axis-and-scales" render={() => (<AxisAndScalesHooks />)} />
             <Route exact path="/simple/hooks/animated-bar-chart" render={() => (<AnimatedBarChartHooks />)} />
-            
+            <Route exact path="/simple/hooks/interactivity" render={() => (<InteractivityHooks />)} />
 
             <Route exact path="/maps/class/projections/albersusa" render={() => (<AlbersUsaClass />)} />
             <Route exact path="/maps/hooks/projections/albersusa" render={() => (<AlbersUsaHooks />)} />
+            <Route exact path="/maps/hooks/projections/albersusa02" render={() => (<AlbersUsa02Hooks />)} />
             {/* <Route exact path="/maps/class/projections/sphericalmercator" render={() => (<SphericalMercatorClass />)} />
             <Route exact path="/maps/hooks/projections/sphericalmercator" render={() => (<SphericalMercatorClass />)} />
             <Route exact path="/maps/class/projections/orthographic" render={() => (<OrthographicClass />)} />
