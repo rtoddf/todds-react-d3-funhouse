@@ -11,12 +11,9 @@ let width, height, vis_group, aspect
 const margins = {top: 0, right: 20, bottom: 20, left: 20}
 const defaults = {
     colors: {
-        none: 'none',
-        land: '#baba71',
-        water: '#a8e1f8',
-        stroke: '#333',
-        strokeWidth: .5,
-        strokeOpacity: .5
+        land: '#ababab',
+        strokeColor: '#fff',
+        strokeWidth: 2,
     }
 }
 
@@ -31,16 +28,10 @@ function AlbersUsa02() {
     const [stateInfo, setStateInfo] = useState({});
     const svgRef = useRef();
 
-    function state_party_fill(d){
-        console.log('d.id: ', d)
-        // console.log('stateData: ', stateData)
-        // var location = stateData[d.id].location
-        // if(location == 'true'){
-        //     return '#e91d0e'
-        // } else {
-        //     return 'white'
-        // }
-        return 'red'
+    function state_location_fill(d){
+        if(stateData[d.id]){
+            return stateData[d.id].location == 'true' ? '#e91d0e' : defaults.colors.land
+        }
     }
 
     useEffect(() => {
@@ -56,7 +47,7 @@ function AlbersUsa02() {
                 stateData[d.id] = {
                     'name': d.name,
                     'code': d.code,
-                    'party': d.location
+                    'location': d.location
                 }
             })
 
@@ -66,9 +57,6 @@ function AlbersUsa02() {
     }, [topology])
 
     if(topology && topology.objects && stateInfo){
-        console.log('stateInfo: ', stateInfo)
-
-
         const svg = select(svgRef.current)
             .attrs({
                 'width': width + margins.left + margins.right,
@@ -85,28 +73,29 @@ function AlbersUsa02() {
             .projection(projection);
 
         vis_group = svg.append('g')
-        vis_group.append('path')
-            .datum(topojson.feature(topology, topology.objects.land))
+        vis_group.selectAll('path')
+            .data(topojson.feature(topology, topology.objects.states).features)
+            .enter().append('path')
             .attrs({
                 'd': path,
-                'fill': defaults.colors.land,
-                'stroke': defaults.colors.stroke,
-                'stroke-width': defaults.colors.strokeWidth
+                'fill': d => state_location_fill(d),
+                'stroke': defaults.colors.strokeColor,
+                'strokeWidth': defaults.colors.strokeWidth
             })
 
-        vis_group.append('path')
-            .datum(topojson.feature(topology, topology.objects.states, function(a, b){
-                return a !== b
-            }))
-            .attrs({
-                'd': path,
-                'fill': function(d){
-                    console.log('d in function: ', d)
-                    return state_party_fill(d.features)
-                },
-                'stroke': defaults.colors.stroke,
-                'stroke-width': defaults.colors.strokeWidth
-            })
+        // vis_group.append('path')
+        //     .datum(topojson.feature(topology, topology.objects.states, function(a, b){
+        //         return a !== b
+        //     }))
+        //     .attrs({
+        //         'd': path,
+        //         'fill': function(d){
+        //             console.log('d in function: ', d)
+        //             return state_party_fill(d.features)
+        //         },
+        //         'stroke': defaults.colors.stroke,
+        //         'stroke-width': defaults.colors.strokeWidth
+        //     })
     }
 
     return (
