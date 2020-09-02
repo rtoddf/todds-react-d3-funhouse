@@ -23,32 +23,33 @@ function AlbersUsa02() {
     const [topology, setTopology] = useState({});
     const svgRef = useRef();
 
-    width = 1000
-    height = 700
-
-    const svg = select(svgRef.current)
-        .attr("width", width)
-        .attr("height", height)
-
-    const projection = geoAlbersUsa()
-        .scale(width)
-        .translate([ width/2, height/2 ]);
-
-    const path = geoPath()
-        .projection(projection);
-
     useEffect(() => {
-        console.log("svgRef: ", svgRef)
+        const container_parent = document.querySelector('.display')
+
+        width = container_parent.offsetWidth
+        height = width * .5
 
         Promise.all([us]).then(function(data) {
             setTopology(data[0])
         })
 
-    }, [svg, topology])
+    }, [topology])
 
     if(topology && topology.objects){
-        console.log("topology.objects: ", topology.objects)
-        console.log("topology.objects.land: ", topology.objects.land)
+        const svg = select(svgRef.current)
+            .attrs({
+                'width': width + margins.left + margins.right,
+                'height': height + margins.top + margins.bottom,
+                'preserveAspectRatio': 'xMinYMid',
+                'viewBox': '0 0 ' + (width + margins.left + margins.right) + ' ' + (height + margins.top + margins.bottom)
+            })
+
+        const projection = geoAlbersUsa()
+            .scale(width)
+            .translate([ width/2, height/2 ]);
+
+        const path = geoPath()
+            .projection(projection);
 
         vis_group = svg.append('g')
         vis_group.append('path')
