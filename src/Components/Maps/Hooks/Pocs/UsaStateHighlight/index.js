@@ -12,6 +12,7 @@ const margins = {top: 0, right: 20, bottom: 20, left: 20}
 const defaults = {
     colors: {
         land: '#ababab',
+        location: '#00b3f0',
         strokeColor: '#fff',
         strokeWidth: 2,
     }
@@ -30,7 +31,7 @@ function AlbersUsa02() {
 
     function state_location_fill(d){
         if(stateData[d.id]){
-            return stateData[d.id].location == 'true' ? '#e91d0e' : defaults.colors.land
+            return stateData[d.id].location == 'true' ? defaults.colors.location : defaults.colors.land
         }
     }
 
