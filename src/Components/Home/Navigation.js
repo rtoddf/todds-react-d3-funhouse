@@ -37,6 +37,15 @@ const Navigation = () => {
                     <li>Albers USA</li>
                 </ul> */}
             </article>
+            <article className="panel">
+                <h3>Maps - POCs</h3>
+                <ul>
+                    <li><a href="/maps/hooks/projections/usa-state-highlight">USA State Highlight - Hooks</a></li>
+                </ul>
+            </article>
+
+
+            
         </div>
        
     )

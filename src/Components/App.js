@@ -16,6 +16,7 @@ import AlbersUsa02Hooks from "./Maps/Hooks/Projections/AlbersUsa02";
 // import SphericalMercatorClass from "./Maps/Class/Projections/SphericalMercator";
 
 // import OrthographicClass from "./Maps/Class/Projections/Orthographic";
+import UsaStateHighlightHooks from "./Maps/Hooks/Pocs/UsaStateHighlight";
 
 
 
@@ -41,6 +42,8 @@ class App extends Component {
             <Route exact path="/maps/hooks/projections/sphericalmercator" render={() => (<SphericalMercatorClass />)} />
             <Route exact path="/maps/class/projections/orthographic" render={() => (<OrthographicClass />)} />
             <Route exact path="/maps/hooks/projections/orthographic" render={() => (<OrthographicClass />)} /> */}
+
+            <Route exact path="/maps/hooks/projections/usa-state-highlight" render={() => (<UsaStateHighlightHooks />)} />
           </Switch>
         </BrowserRouter>
       </>
