@@ -1,0 +1,61 @@
+id	code	name	location
+1	AL	Alabama	true
+2	AK	Alaska	true
+4	AZ	Arizona	true
+5	AR	Arkansas	true
+6	CA	California	false
+8	CO	Colorado	false
+9	CT	Connecticut	false
+10	DE	Delaware	false
+11	DC	District of Columbia	false
+12	FL	Florida	false
+13	GA	Georgia	true
+15	HI	Hawaii	false
+16	ID	Idaho	true
+17	IL	Illinois	false
+18	IN	Indiana	false
+19	IA	Iowa	true
+20	KS	Kansas	true
+21	KY	Kentucky	true
+22	LA	Louisiana	true
+23	ME	Maine	false
+24	MD	Maryland	false
+25	MA	Massachusetts	false
+26	MI	Michigan	false
+27	MN	Minnesota	false
+28	MS	Mississippi	true
+29	MO	Missouri	false
+30	MT	Montana	false
+31	NE	Nebraska	true
+32	NV	Nevada	false
+33	NH	New Hampshire	false
+34	NJ	New Jersey	false
+35	NM	New Mexico	false
+36	NY	New York	false
+37	NC	North Carolina	true
+38	ND	North Dakota	false
+39	OH	Ohio	false
+40	OK	Oklahoma	true
+41	OR	Oregon	false
+42	PA	Pennsylvania	false
+44	RI	Rhode Island	false
+45	SC	South Carolina	true
+46	SD	South Dakota	true
+47	TN	Tennessee	true
+48	TX	Texas	true
+49	UT	Utah	false
+50	VT	Vermont	false
+51	VA	Virginia	false
+53	WA	Washington	false
+54	WV	West Virginia	false
+55	WI	Wisconsin	false
+56	WY	Wyoming	true
+60	AS	America Samoa	false
+64	FM	Federated States of Micronesia	false
+66	GU	Guam	false
+68	MH	Marshall Islands	false
+69	MP	Northern Mariana Islands	false
+70	PW	Palau	false
+72	PR	Puerto Rico	false
+74	UM	U.S. Minor Outlying Islands	false
+78	VI	Virgin Islands of the United States	false
