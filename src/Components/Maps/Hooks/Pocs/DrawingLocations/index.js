@@ -5,6 +5,7 @@ import { geoAlbersUsa, geoPath } from "d3-geo";
 
 import us from '../../../../Data/topology/us.json';
 import info from '../../../../Data/info/us-states-locations.tsv';
+import locations from '../../../../Data/info/drawing-locations.json';
 
 let width, height, vis_group, aspect
 
@@ -19,12 +20,8 @@ const defaults = {
 }
 
 let stateData = {}
-// var data_set
-// var party_map = true,
-//     same_sex_map = false,
-//     age_of_consent_map = false
 
-function UsaStateHighlight() {
+function DrawingLocations() {
     const [topology, setTopology] = useState({});
     const [stateInfo, setStateInfo] = useState({});
     const svgRef = useRef();
@@ -83,20 +80,6 @@ function UsaStateHighlight() {
                 'stroke': defaults.colors.strokeColor,
                 'strokeWidth': defaults.colors.strokeWidth
             })
-
-        // vis_group.append('path')
-        //     .datum(topojson.feature(topology, topology.objects.states, function(a, b){
-        //         return a !== b
-        //     }))
-        //     .attrs({
-        //         'd': path,
-        //         'fill': function(d){
-        //             console.log('d in function: ', d)
-        //             return state_party_fill(d.features)
-        //         },
-        //         'stroke': defaults.colors.stroke,
-        //         'stroke-width': defaults.colors.strokeWidth
-        //     })
     }
 
     return (
@@ -106,4 +89,4 @@ function UsaStateHighlight() {
     )
 }
 
-export default UsaStateHighlight;
+export default DrawingLocations;

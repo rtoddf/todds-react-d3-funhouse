@@ -41,6 +41,7 @@ const Navigation = () => {
                 <h3>Maps - POCs</h3>
                 <ul>
                     <li><a href="/maps/hooks/projections/usa-state-highlight">USA State Highlight - Hooks</a></li>
+                    <li><a href="/maps/hooks/projections/drawing-locations">Drawing Locations - Hooks</a></li>
                 </ul>
             </article>
 

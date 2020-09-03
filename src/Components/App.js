@@ -17,6 +17,7 @@ import AlbersUsa02Hooks from "./Maps/Hooks/Projections/AlbersUsa02";
 
 // import OrthographicClass from "./Maps/Class/Projections/Orthographic";
 import UsaStateHighlightHooks from "./Maps/Hooks/Pocs/UsaStateHighlight";
+import DrawingLocationsHooks from "./Maps/Hooks/Pocs/DrawingLocations";
 
 
 
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/maps/hooks/projections/orthographic" render={() => (<OrthographicClass />)} /> */}
 
             <Route exact path="/maps/hooks/projections/usa-state-highlight" render={() => (<UsaStateHighlightHooks />)} />
+            <Route exact path="/maps/hooks/projections/drawing-locations" render={() => (<DrawingLocationsHooks />)} />
           </Switch>
         </BrowserRouter>
       </>
