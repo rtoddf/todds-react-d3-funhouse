@@ -1,6 +1,5 @@
 import React, {useRef, useEffect, useState} from "react";
-import * as d3 from "d3";
-import { select } from "d3";
+import { select, event } from "d3";
 import * as topojson from "topojson-client";
 import { geoAlbersUsa, geoPath } from "d3-geo";
 import "./default.css";
@@ -23,7 +22,7 @@ const defaults = {
 
 let stateData = {}
 
-var tooltip = select('body').append('div')
+let tooltip = select('body').append('div')
     .attrs({
         'class': 'tooltip'
     })
@@ -95,8 +94,8 @@ function DrawingLocations() {
                 .enter().append('circle')
             .attrs({
                 'class': 'marker',
-                'cx': (d) => d.longitude != 0 && d.latitude != 0 ? projection([ d.longitude, d.latitude ])[0]: '',
-                'cy': (d) => d.longitude != 0 && d.latitude != 0 ? projection([ d.longitude, d.latitude ])[1]: '',
+                'cx': (d) => d.longitude !== 0 && d.latitude !== 0 ? projection([ d.longitude, d.latitude ])[0]: '',
+                'cy': (d) => d.longitude !== 0 && d.latitude !== 0 ? projection([ d.longitude, d.latitude ])[1]: '',
                 'r': 5,
                 'stroke': 'white'
             })
@@ -105,8 +104,8 @@ function DrawingLocations() {
                 select('.tooltip')
                     .html('<span>' + d.displayname + '</span>')
                     .styles({
-                        'left': (d3.event.pageX) + 'px',
-                        'top': (d3.event.pageY - 35) + 'px'
+                        'left': (event.pageX) + 'px',
+                        'top': (event.pageY - 35) + 'px'
                     })
                     .transition()
                         .duration(500)
@@ -119,19 +118,19 @@ function DrawingLocations() {
                         .style('opacity', 0) 
             })
             .on('click', function(d){
-                d3.select('.location-info-box')
+                select('.location-info-box')
                     .style('display', 'block')
     
-                d3.select('.location')
+                select('.location')
                     .html(d.displayname)
     
-                d3.select('.address')
+                select('.address')
                     .html(d.address)
     
-                d3.select('.email')
+                select('.email')
                     .html(d.email)
     
-                d3.select('.phone')
+                select('.phone')
                     .html(d.phone)
             })
     }

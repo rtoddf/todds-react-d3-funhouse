@@ -95,9 +95,9 @@ div[data-layout="column"] {
     #Market / Properties
 \*-----------------------------------------------------------------------------------*/
 
-/* .location-info-box {
+.location-info-box {
     display: none;
-} */
+}
 
 .location-info-box h2,
 .location-info-box h3,
